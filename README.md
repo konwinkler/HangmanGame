@@ -1,0 +1,11 @@
+# HangmanGame
+- it is implemented as a maven project in Java
+- requirements:
+  - jdk >=1.8
+  - maven >= 3.3.3
+- the focus is on the main game class and its unit tests:
+  - src.main.java.HangmanGame.java
+  - src.test.java.HangmanGameTest.java
+- it is a self contained example which is executable:
+  - from command line with 'mvn exec:java'
+  - in IDE: execute class GameStarter (contains main method)
