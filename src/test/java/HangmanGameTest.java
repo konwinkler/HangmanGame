@@ -13,7 +13,7 @@ import static org.mockito.Mockito.*;
 /**
  * Unit tests for {@link HangmanGame}. The test names are of the structure:
  * 'methodUnderTest'_should'expectedValue'_when'conditionForTest'. All tests follow the arrange-act-assert
- * pattern where in the act part the method under test is executed.
+ * pattern, where in the act part the method under test is executed.
  *
  * @author <a href="mailto:konwinkler@gmail.com">Konrad Winkler</a>
  */
@@ -127,10 +127,8 @@ public class HangmanGameTest
   }
 
   /**
-   * Avoid regressions of bug where in a phrase with two words the wrong guesses count got increased by 2 for each
-   * wrong guess.
-   *
-   * @throws Exception
+   * Avoid regressions of bug, where in a phrase with two words, the wrong guesses counter got increased by 2 for
+   * each wrong guess.
    */
   @Test
   public void state_shouldBeOngoing_whenAllAllowedWrongGuessOfPhrase()
@@ -151,7 +149,7 @@ public class HangmanGameTest
   }
 
   /**
-   * Confirm a positive result is returned for a correct letter.
+   * Confirm return value is positive for a correct letter.
    */
   @Test
   public void guess_shouldAcceptLetter_whenLetterInWord()
@@ -167,7 +165,7 @@ public class HangmanGameTest
   }
 
   /**
-   * Confirm a negative result is returned for a wrong letter.
+   * Confirm return value is negative for a wrong letter.
    */
   @Test
   public void guess_shouldRejectLetter_whenLetterNotInWord()
@@ -214,7 +212,7 @@ public class HangmanGameTest
   }
 
   /**
-   * For every correct guess the view should get a positive callback.
+   * For every correct guess, the view should get a positive callback.
    */
   @Test
   public void guess_shouldNotifyObserversWithCorrect_whenCorrectLetterGuessed()
@@ -254,7 +252,7 @@ public class HangmanGameTest
   }
 
   /**
-   * Confirm after correctly guessing a letter it is added to the known state of the phrase.
+   * Confirm after correctly guessing a letter, it is added to the known state of the phrase.
    */
   @Test
   public void knownLetters_shouldDisplayLetter_whenCorrectLetterGuessed()
@@ -305,7 +303,7 @@ public class HangmanGameTest
   }
 
   /**
-   * Confirm start notifies all observers once without any information about a last guess, because there has been
+   * Confirm start notifies all observers once without any information about a last guess because there has been
    * none yet.
    */
   @Test

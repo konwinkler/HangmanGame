@@ -89,7 +89,7 @@ public class HangmanGame extends Observable
 
   /**
    * Method to play one turn of the game. In a turn a letter is guessed (char parameter) and if the letter
-   * appears in the secret phrase this letter is added to the known letters of the phrase, therefor getting one
+   * appears in the secret phrase this letter is added to the known letters of the phrase, therefore getting one
    * step closer to solving the game. If the letter is not contained in the phrase the counter of wrong guesses
    * is increased by one.
    *
@@ -193,7 +193,7 @@ public class HangmanGame extends Observable
           stringBuilder.append(UNKNOWN_LETTER_REPLACEMENT);
         }
       }
-      //adds a trailing space after every word to separate them,note: this includes the last word
+      //adds a trailing space after every word to separate them, note: this includes the last word
       stringBuilder.append(WORD_SEPARATOR);
     }
 
@@ -211,10 +211,10 @@ public class HangmanGame extends Observable
     boolean allWordsKnown = true;
     for ( String word : secretWords )
     {
-      //if all bits are true then all letters of this word are known
+      //if all bits are true, then all letters of this word are known
       boolean wordIsKnown = foundLetters.get(word).cardinality() == word.length();
 
-      //if one of the words is not known then allWordsKnown is set to false
+      //if one of the words is not known, then allWordsKnown is set to false
       allWordsKnown = allWordsKnown && wordIsKnown;
     }
 
@@ -223,7 +223,7 @@ public class HangmanGame extends Observable
     {
       currentState = GameState.WIN;
     }
-    //if too many wrong guesses the game is lost
+    //if too many wrong guesses, then the game is lost
     else if ( wrongGuesses > ALLOWED_WRONG_GUESSES )
     {
       currentState = GameState.LOSE;
@@ -247,7 +247,7 @@ public class HangmanGame extends Observable
   }
 
   /**
-   * Used to know how close the count of wrong gusses is to {@link #ALLOWED_WRONG_GUESSES} and therefore how
+   * Used to know how close the count of wrong guesses is to {@link #ALLOWED_WRONG_GUESSES} and therefore how
    * close the game is to a loss.
    *
    * @return times a valid letter was guessed previously which did not appear in the secret phrase
