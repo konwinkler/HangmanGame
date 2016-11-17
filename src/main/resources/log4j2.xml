@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="5">
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %c %M - %msg%n"/>
+        </Console>
+        <File name="file" fileName="logs/prod.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %c %M - %msg%n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Root level="TRACE">
+            <AppenderRef ref="console" level="ERROR"/>
+            <AppenderRef ref="file" level="TRACE"/>
+        </Root>
+    </Loggers>
+</Configuration>
